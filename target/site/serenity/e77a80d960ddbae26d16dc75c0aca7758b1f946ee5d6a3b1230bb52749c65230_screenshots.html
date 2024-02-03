@@ -1,0 +1,573 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css"><!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/chartjs-plugin-doughnutlabel.min.js"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">co.com.choucair.automation.maxtime</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="a3a80a55e59eb6a432fab63fd1ad26ba6153bb5381c015d788dfcd205fceb4bd.html">Pruebas En Aplicativo Startsharp</a></span>
+                > <span class="truncate-60"><a
+                    href="e77a80d960ddbae26d16dc75c0aca7758b1f946ee5d6a3b1230bb52749c65230.html">crear unidad de negocio </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 03-02-2024 07:53</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Pruebas En Aplicativo Startsharp </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="81c7c7b688d7964f4070604c4c17006a42ce7cc6e625b216f37bc3bf40477b09.html">Historias
+                                    (tag)</a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="3b647098d7d1f98c7fead3c38dba094af5c9c8af4ab37b7b04de7da636c6d139.html">Escenario1
+                                    (tag)</a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-hourglass-top pending-icon fa-2x' title='PENDING'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="pending-color">crear unidad de negocio
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+    <div class="story-title">
+        <h3>Scenario:</h3>
+        <div class="scenario">Cuando el se dirige al primer formulario selecciona el numero correspondiente en el primer ciclo<br>Cuando el se dirige al segundo formulario selecciona el numero correcto en el primer ciclo<br>Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el primer ciclo<br><table class='embedded'><tbody><tr><td>letrasPrimerCiclo</td></tr><tr><td>&lt;letrasPrimerCiclo&gt;</td></tr></tbody></table><br>Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el primer ciclo<br><table class='embedded'><tbody><tr><td>figurasPrimerCiclo</td></tr><tr><td>&lt;figurasPrimerCiclo&gt;</td></tr></tbody></table><br>Cuando el se dirige al primer formulario selecciona el numero correspondiente en el segundo ciclo<br>Cuando el se dirige al segundo formulario selecciona el numero correcto en el segundo ciclo<br>Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el segundo ciclo<br><table class='embedded'><tbody><tr><td>letrasSegundoCiclo</td></tr><tr><td>llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll</td></tr></tbody></table><br>Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el segundo ciclo<br><table class='embedded'><tbody><tr><td>figurasSegundoCiclo</td></tr><tr><td>&lt;18&gt;</td></tr></tbody></table><br>Cuando el se dirige al primer formulario selecciona el numero correspondiente en el tercer ciclo<br>Cuando el se dirige al segundo formulario selecciona el numero correcto en el tercer ciclo<br>Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el tercer ciclo<br><table class='embedded'><tbody><tr><td>letrasTercerCiclo</td></tr><tr><td>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv</td></tr></tbody></table><br>Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en el tercer ciclo<br><table class='embedded'><tbody><tr><td>figurasTercerCiclo</td></tr><tr><td>&lt;13&gt;</td></tr></tbody></table><br>Cuando el se dirige al primer formulario selecciona el numero correspondiente en el cuarto ciclo<br>Cuando el se dirige al segundo formulario selecciona el numero correcto en el cuarto ciclo<br>Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el cuarto ciclo<br><table class='embedded'><tbody><tr><td>letrasCuartoCiclo</td></tr><tr><td>JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ</td></tr></tbody></table><br>Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el cuarto ciclo<br><table class='embedded'><tbody><tr><td>figurasCuartoCiclo</td></tr><tr><td>&lt;19&gt;</td></tr></tbody></table><br>Cuando el se dirige al primer formulario selecciona el numero correspondiente en el quinto ciclo<br>Cuando el se dirige al segundo formulario selecciona el numero correcto en el quinto ciclo<br>Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el quinto ciclo<br><table class='embedded'><tbody><tr><td>letrasQuintoCiclo</td></tr><tr><td>iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</td></tr></tbody></table><br>Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el quinto ciclo<br><table class='embedded'><tbody><tr><td>figurasQuintoCiclo</td></tr><tr><td>&lt;10&gt;</td></tr></tbody></table><br>Cuando el se dirige al primer formulario selecciona el numero correspondiente en el sexto ciclo<br>Cuando el se dirige al segundo formulario selecciona el numero correcto en el sexto ciclo<br>Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el sexto ciclo<br><table class='embedded'><tbody><tr><td>letrasSextoCiclo</td></tr><tr><td>DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD</td></tr></tbody></table><br>Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el sexto ciclo<br><table class='embedded'><tbody><tr><td>figurasSextoCiclo</td></tr><tr><td>&lt;8&gt;</td></tr></tbody></table><br>Cuando el se dirige al primer formulario selecciona el numero correspondiente en el septimo ciclo<br>Cuando el se dirige al segundo formulario selecciona el numero correcto en el septimo ciclo<br>Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el septimo ciclo<br><table class='embedded'><tbody><tr><td>letrasSeptimoCiclo</td></tr><tr><td>MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM</td></tr></tbody></table><br>Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el septimo ciclo<br><table class='embedded'><tbody><tr><td>figurasSeptimoCiclo</td></tr><tr><td>&lt;19&gt;</td></tr></tbody></table><br>Cuando el se dirige al primer formulario selecciona el numero correspondiente en el octavo ciclo<br>Cuando el se dirige al segundo formulario selecciona el numero correcto en el octavo ciclo<br>Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el octavo ciclo<br><table class='embedded'><tbody><tr><td>letrasOctavoCiclo</td></tr><tr><td>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td></tr></tbody></table><br>Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el octavo ciclo<br><table class='embedded'><tbody><tr><td>figurasOctavoCiclo</td></tr><tr><td>&lt;14&gt;</td></tr></tbody></table><br>Cuando el se dirige al primer formulario selecciona el numero correspondiente en el noveno ciclo<br>Cuando el se dirige al segundo formulario selecciona el numero correcto en el noveno ciclo<br>Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el noveno ciclo<br><table class='embedded'><tbody><tr><td>letrasNovenoCiclo</td></tr><tr><td>mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</td></tr></tbody></table><br>Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el noveno ciclo<br><table class='embedded'><tbody><tr><td>figurasNovenoCiclo</td></tr><tr><td>&lt;9&gt;</td></tr></tbody></table><br>Cuando el se dirige al primer formulario selecciona el numero correspondiente en el decimo ciclo<br>Cuando el se dirige al segundo formulario selecciona el numero correcto en el decimo ciclo<br>Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el decimo ciclo<br><table class='embedded'><tbody><tr><td>letrasDecimoCiclo</td></tr><tr><td>MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM</td></tr></tbody></table><br>Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el decimo ciclo<br><table class='embedded'><tbody><tr><td>figurasDecimoCiclo</td></tr><tr><td>&lt;8&gt;</td></tr></tbody></table><br>Entonces envia la informacion continua el ciclo y puede ver el mensaje &lt;mensajeFinal&gt;</div>
+    </div>
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="ec720e6ecb95950a8a117d150efb0f9f16d9a57d9cb428801cc9c145defa31a3.png" title=" 1: crear unidad de negocio ({letrasPrimerCiclo=UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU, figurasPrimerCiclo=17, mensajeFinal=&lt;General&gt;c2fe0e21ce445033Mi00LTU5ODk3Nw==df63afbf4da3d4b1})" width="1918"/>
+                <img src="ec720e6ecb95950a8a117d150efb0f9f16d9a57d9cb428801cc9c145defa31a3.png" title=" Y se loguea correctamente en la pagina con sus credenciales
+| usuario | contrasena |
+| 779895 | 10df2f32286b7120Mi00LTU5ODk3Nw==30e0c83e6c29f1c310df2f32286b7120Mi00LTU5ODk3Nw==30e0c83e6c29f1c3 |" width="1918"/>
+                <img src="ec720e6ecb95950a8a117d150efb0f9f16d9a57d9cb428801cc9c145defa31a3.png" title=" Chris login" width="1918"/>
+                <img src="ec720e6ecb95950a8a117d150efb0f9f16d9a57d9cb428801cc9c145defa31a3.png" title=" chris opens the Test section" width="1918"/>
+                <img src="f4f5c89d0c6cef9cf2c90b65e50327e94186786bb9057fc724b902803a921293.png" title=" chris enters '779895' into donde se escribe el usuario" width="1918"/>
+                <img src="92f3644ad26f7a328afb1d0392ec3e9d9149bd101c9df3a131699e6131c72cf1.png" title=" chris enters '10df2f32286b7120Mi00LTU5ODk3Nw==30e0c83e6c29f1c310df2f32286b7120Mi00LTU5ODk3Nw==30e0c83e6c29f1c3' into donde se escribe el usuario" width="1918"/>
+                <img src="ad20879c4d2a59cc1285b291fd9d6337919f3ae1b1411145f587603ad12a9725.png" title=" chris clicks on Boton para iniciar sesion" width="1918"/>
+                <img src="ad20879c4d2a59cc1285b291fd9d6337919f3ae1b1411145f587603ad12a9725.png" title=" Chris login (completed)" width="1918"/>
+                <img src="ad20879c4d2a59cc1285b291fd9d6337919f3ae1b1411145f587603ad12a9725.png" title=" Y se loguea correctamente en la pagina con sus credenciales
+| usuario | contrasena |
+| 779895 | 10df2f32286b7120Mi00LTU5ODk3Nw==30e0c83e6c29f1c310df2f32286b7120Mi00LTU5ODk3Nw==30e0c83e6c29f1c3 | (completed)" width="1918"/>
+                <img src="ac9bd361461ef6fe44ebea3c43ebf8f08b35344828d38365608c32f06399e2ef.png" title=" Cuando el se dirige al primer formulario selecciona el numero correspondiente en el primer ciclo" width="1918"/>
+                <img src="ac9bd361461ef6fe44ebea3c43ebf8f08b35344828d38365608c32f06399e2ef.png" title=" Chris result form one cycle one" width="1918"/>
+                <img src="ac9bd361461ef6fe44ebea3c43ebf8f08b35344828d38365608c32f06399e2ef.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="feaa93e15bd94878102f32ed612fa94ef328a2c3dd49293476bc1b232b0fe3dd.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="feaa93e15bd94878102f32ed612fa94ef328a2c3dd49293476bc1b232b0fe3dd.png" title=" Chris result form one cycle one (completed)" width="1918"/>
+                <img src="feaa93e15bd94878102f32ed612fa94ef328a2c3dd49293476bc1b232b0fe3dd.png" title=" Cuando el se dirige al primer formulario selecciona el numero correspondiente en el primer ciclo (completed)" width="1918"/>
+                <img src="89a1f16649d7cc68fbc8b967ddbac399f57351a11710ec450f0f1c4ce64d5526.png" title=" Cuando el se dirige al segundo formulario selecciona el numero correcto en el primer ciclo" width="1918"/>
+                <img src="89a1f16649d7cc68fbc8b967ddbac399f57351a11710ec450f0f1c4ce64d5526.png" title=" Chris result form two cycle one" width="1918"/>
+                <img src="89a1f16649d7cc68fbc8b967ddbac399f57351a11710ec450f0f1c4ce64d5526.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="89a1f16649d7cc68fbc8b967ddbac399f57351a11710ec450f0f1c4ce64d5526.png" title=" Chris result form two cycle one (completed)" width="1918"/>
+                <img src="89a1f16649d7cc68fbc8b967ddbac399f57351a11710ec450f0f1c4ce64d5526.png" title=" Cuando el se dirige al segundo formulario selecciona el numero correcto en el primer ciclo (completed)" width="1918"/>
+                <img src="6489adc17cda3a816aff9c9412226501e0f737199e364c0f5b681fdb56721ec8.png" title=" Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el primer ciclo
+| letrasPrimerCiclo |
+| UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU |" width="1918"/>
+                <img src="6489adc17cda3a816aff9c9412226501e0f737199e364c0f5b681fdb56721ec8.png" title=" Chris result form three cycle one" width="1918"/>
+                <img src="6489adc17cda3a816aff9c9412226501e0f737199e364c0f5b681fdb56721ec8.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="9019d43ddf91a9c03e82de2cc3746fd615dd3ef7a2359277a80d2e97a6f19ef8.png" title=" chris enters 'UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU' into donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="9019d43ddf91a9c03e82de2cc3746fd615dd3ef7a2359277a80d2e97a6f19ef8.png" title=" Chris result form three cycle one (completed)" width="1918"/>
+                <img src="9019d43ddf91a9c03e82de2cc3746fd615dd3ef7a2359277a80d2e97a6f19ef8.png" title=" Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el primer ciclo
+| letrasPrimerCiclo |
+| UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU | (completed)" width="1918"/>
+                <img src="3fc9c3ccd63423ae1d0be3da86fb85c2611d01e683bb7ced11e401514a63cde9.png" title=" Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el primer ciclo
+| figurasPrimerCiclo |
+| 17 |" width="1918"/>
+                <img src="3fc9c3ccd63423ae1d0be3da86fb85c2611d01e683bb7ced11e401514a63cde9.png" title=" Chris result form four cycle one" width="1918"/>
+                <img src="3fc9c3ccd63423ae1d0be3da86fb85c2611d01e683bb7ced11e401514a63cde9.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="7aa0e06b5d4e4ad916775242974a6af6838e17aa6ca2479ba5774b411912c083.png" title=" chris enters '17' into donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="3c324a681022fb2cabce21b772d90ce08490a7185f8299e7bf779cac4067aee7.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="3c324a681022fb2cabce21b772d90ce08490a7185f8299e7bf779cac4067aee7.png" title=" Chris result form four cycle one (completed)" width="1918"/>
+                <img src="3c324a681022fb2cabce21b772d90ce08490a7185f8299e7bf779cac4067aee7.png" title=" Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el primer ciclo
+| figurasPrimerCiclo |
+| 17 | (completed)" width="1918"/>
+                <img src="d2499e90fa1f301f559da0668c8462bd54cbc142769a0e55f3d495d718b35b75.png" title=" Cuando el se dirige al primer formulario selecciona el numero correspondiente en el segundo ciclo" width="1918"/>
+                <img src="d2499e90fa1f301f559da0668c8462bd54cbc142769a0e55f3d495d718b35b75.png" title=" Chris result form one cycle two" width="1918"/>
+                <img src="d2499e90fa1f301f559da0668c8462bd54cbc142769a0e55f3d495d718b35b75.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="9f847e7540b3f46485f48aa8b8fccc99e53b8de57b66dc06133d6ba575c756b7.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="9f847e7540b3f46485f48aa8b8fccc99e53b8de57b66dc06133d6ba575c756b7.png" title=" Chris result form one cycle two (completed)" width="1918"/>
+                <img src="9f847e7540b3f46485f48aa8b8fccc99e53b8de57b66dc06133d6ba575c756b7.png" title=" Cuando el se dirige al primer formulario selecciona el numero correspondiente en el segundo ciclo (completed)" width="1918"/>
+                <img src="5de5c53eea65090c673ea25577d1fb2386f8695a34a837c1b51d8023aedae9a0.png" title=" Cuando el se dirige al segundo formulario selecciona el numero correcto en el segundo ciclo" width="1918"/>
+                <img src="5de5c53eea65090c673ea25577d1fb2386f8695a34a837c1b51d8023aedae9a0.png" title=" Chris result form two cycle two" width="1918"/>
+                <img src="5de5c53eea65090c673ea25577d1fb2386f8695a34a837c1b51d8023aedae9a0.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="5de5c53eea65090c673ea25577d1fb2386f8695a34a837c1b51d8023aedae9a0.png" title=" Chris result form two cycle two (completed)" width="1918"/>
+                <img src="5de5c53eea65090c673ea25577d1fb2386f8695a34a837c1b51d8023aedae9a0.png" title=" Cuando el se dirige al segundo formulario selecciona el numero correcto en el segundo ciclo (completed)" width="1918"/>
+                <img src="7867211a0641bd9ce4fd0c875ea5e420c399c3d21af22ffb2e42bfd6dd1e0350.png" title=" Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el segundo ciclo
+| letrasSegundoCiclo |
+| llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll |" width="1918"/>
+                <img src="7867211a0641bd9ce4fd0c875ea5e420c399c3d21af22ffb2e42bfd6dd1e0350.png" title=" Chris result form three cycle two" width="1918"/>
+                <img src="7867211a0641bd9ce4fd0c875ea5e420c399c3d21af22ffb2e42bfd6dd1e0350.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="cfcd946bfa14f3ff11e5ad2758a300e8d4768c452afd90aedac9189fd3c6e9a5.png" title=" chris enters 'llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll' into donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="cfcd946bfa14f3ff11e5ad2758a300e8d4768c452afd90aedac9189fd3c6e9a5.png" title=" Chris result form three cycle two (completed)" width="1918"/>
+                <img src="cfcd946bfa14f3ff11e5ad2758a300e8d4768c452afd90aedac9189fd3c6e9a5.png" title=" Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el segundo ciclo
+| letrasSegundoCiclo |
+| llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll | (completed)" width="1918"/>
+                <img src="785c859dbbabba2516659238cacfb73193a442cc7a8c0df5b3f56fbf308bc82d.png" title=" Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el segundo ciclo
+| figurasSegundoCiclo |
+| &lt;18&gt; |" width="1918"/>
+                <img src="785c859dbbabba2516659238cacfb73193a442cc7a8c0df5b3f56fbf308bc82d.png" title=" Chris result form four cycle two" width="1918"/>
+                <img src="785c859dbbabba2516659238cacfb73193a442cc7a8c0df5b3f56fbf308bc82d.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="e0277fec119d96df92bfb8f659533c70a471c39833a0fa9b2364f472ec07e70a.png" title=" chris enters '&lt;18&gt;' into donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="df71397f894509bb59fe8abf38303dbed1e76fd6f09dc815cafbb046c19430fb.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="df71397f894509bb59fe8abf38303dbed1e76fd6f09dc815cafbb046c19430fb.png" title=" Chris result form four cycle two (completed)" width="1918"/>
+                <img src="df71397f894509bb59fe8abf38303dbed1e76fd6f09dc815cafbb046c19430fb.png" title=" Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el segundo ciclo
+| figurasSegundoCiclo |
+| &lt;18&gt; | (completed)" width="1918"/>
+                <img src="5bd63b5db0f0a393ca33ed10da2c8a78a10bae15f9c8e833f1ae6804046fadd5.png" title=" Cuando el se dirige al primer formulario selecciona el numero correspondiente en el tercer ciclo" width="1918"/>
+                <img src="5bd63b5db0f0a393ca33ed10da2c8a78a10bae15f9c8e833f1ae6804046fadd5.png" title=" Chris result form one cycle three" width="1918"/>
+                <img src="5bd63b5db0f0a393ca33ed10da2c8a78a10bae15f9c8e833f1ae6804046fadd5.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="8b33a9a0fdfb45eea411e34df4afa15712a4878ba1ab6dd5835cd74e8314c11f.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="8b33a9a0fdfb45eea411e34df4afa15712a4878ba1ab6dd5835cd74e8314c11f.png" title=" Chris result form one cycle three (completed)" width="1918"/>
+                <img src="8b33a9a0fdfb45eea411e34df4afa15712a4878ba1ab6dd5835cd74e8314c11f.png" title=" Cuando el se dirige al primer formulario selecciona el numero correspondiente en el tercer ciclo (completed)" width="1918"/>
+                <img src="36c43c55e1b2a5b7e65efbc9d03b8f32b1f0ad8a405aa31b7313d51c853922c8.png" title=" Cuando el se dirige al segundo formulario selecciona el numero correcto en el tercer ciclo" width="1918"/>
+                <img src="36c43c55e1b2a5b7e65efbc9d03b8f32b1f0ad8a405aa31b7313d51c853922c8.png" title=" Chris result form two cycle three" width="1918"/>
+                <img src="36c43c55e1b2a5b7e65efbc9d03b8f32b1f0ad8a405aa31b7313d51c853922c8.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="36c43c55e1b2a5b7e65efbc9d03b8f32b1f0ad8a405aa31b7313d51c853922c8.png" title=" Chris result form two cycle three (completed)" width="1918"/>
+                <img src="36c43c55e1b2a5b7e65efbc9d03b8f32b1f0ad8a405aa31b7313d51c853922c8.png" title=" Cuando el se dirige al segundo formulario selecciona el numero correcto en el tercer ciclo (completed)" width="1918"/>
+                <img src="20adb86dc2ba0b6604c8a5752a8b073f1320496ae26825ef519f2a4b66fb6765.png" title=" Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el tercer ciclo
+| letrasTercerCiclo |
+| vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv |" width="1918"/>
+                <img src="20adb86dc2ba0b6604c8a5752a8b073f1320496ae26825ef519f2a4b66fb6765.png" title=" Chris result form three cycle three" width="1918"/>
+                <img src="20adb86dc2ba0b6604c8a5752a8b073f1320496ae26825ef519f2a4b66fb6765.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="f6e1701f84f15e628bcbea80861635c521427ea1bfb2ec9fa7c2ac230c63c3ea.png" title=" chris enters 'vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv' into donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="f6e1701f84f15e628bcbea80861635c521427ea1bfb2ec9fa7c2ac230c63c3ea.png" title=" Chris result form three cycle three (completed)" width="1918"/>
+                <img src="f6e1701f84f15e628bcbea80861635c521427ea1bfb2ec9fa7c2ac230c63c3ea.png" title=" Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el tercer ciclo
+| letrasTercerCiclo |
+| vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv | (completed)" width="1918"/>
+                <img src="b8b48130573fa418f7dbd5d4144262ff885e448a2cbf28d210c86cde79642eaa.png" title=" Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en el tercer ciclo
+| figurasTercerCiclo |
+| &lt;13&gt; |" width="1918"/>
+                <img src="b8b48130573fa418f7dbd5d4144262ff885e448a2cbf28d210c86cde79642eaa.png" title=" Chris result form four cycle three" width="1918"/>
+                <img src="b8b48130573fa418f7dbd5d4144262ff885e448a2cbf28d210c86cde79642eaa.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="509d135b4cc8ef11fc4f8b7585b4406019e004e56de9429fb9bdae3da9a8d1c6.png" title=" chris enters '&lt;13&gt;' into donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="5a1dbf21e1b13f876720bbbe51d6f6f2f54dc13f9bc7336ec13128df24a26e47.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="5a1dbf21e1b13f876720bbbe51d6f6f2f54dc13f9bc7336ec13128df24a26e47.png" title=" Chris result form four cycle three (completed)" width="1918"/>
+                <img src="5a1dbf21e1b13f876720bbbe51d6f6f2f54dc13f9bc7336ec13128df24a26e47.png" title=" Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en el tercer ciclo
+| figurasTercerCiclo |
+| &lt;13&gt; | (completed)" width="1918"/>
+                <img src="cb0e231297850b1dc4c0fdd7761b327bf8c9d96d4360ce985331f0edf4cd3c09.png" title=" Cuando el se dirige al primer formulario selecciona el numero correspondiente en el cuarto ciclo" width="1918"/>
+                <img src="cb0e231297850b1dc4c0fdd7761b327bf8c9d96d4360ce985331f0edf4cd3c09.png" title=" Chris result form one cycle four" width="1918"/>
+                <img src="cb0e231297850b1dc4c0fdd7761b327bf8c9d96d4360ce985331f0edf4cd3c09.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="85965c29272b88b78b24eff8732b642aade7b54c54f5aaead61bd1433d671c9b.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="85965c29272b88b78b24eff8732b642aade7b54c54f5aaead61bd1433d671c9b.png" title=" Chris result form one cycle four (completed)" width="1918"/>
+                <img src="85965c29272b88b78b24eff8732b642aade7b54c54f5aaead61bd1433d671c9b.png" title=" Cuando el se dirige al primer formulario selecciona el numero correspondiente en el cuarto ciclo (completed)" width="1918"/>
+                <img src="aba7995af7b75c5755bf9b218d64407dfe3722f18715f4dbef9a163aca497f05.png" title=" Cuando el se dirige al segundo formulario selecciona el numero correcto en el cuarto ciclo" width="1918"/>
+                <img src="aba7995af7b75c5755bf9b218d64407dfe3722f18715f4dbef9a163aca497f05.png" title=" Chris result form two cycle four" width="1918"/>
+                <img src="aba7995af7b75c5755bf9b218d64407dfe3722f18715f4dbef9a163aca497f05.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="aba7995af7b75c5755bf9b218d64407dfe3722f18715f4dbef9a163aca497f05.png" title=" Chris result form two cycle four (completed)" width="1918"/>
+                <img src="aba7995af7b75c5755bf9b218d64407dfe3722f18715f4dbef9a163aca497f05.png" title=" Cuando el se dirige al segundo formulario selecciona el numero correcto en el cuarto ciclo (completed)" width="1918"/>
+                <img src="096174be5bff5ea28fccad1676c2c032498f71f86b48ffb62af47cafd498b84f.png" title=" Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el cuarto ciclo
+| letrasCuartoCiclo |
+| JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ |" width="1918"/>
+                <img src="096174be5bff5ea28fccad1676c2c032498f71f86b48ffb62af47cafd498b84f.png" title=" Chris result form three cycle four" width="1918"/>
+                <img src="096174be5bff5ea28fccad1676c2c032498f71f86b48ffb62af47cafd498b84f.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="28bca6be1d432d52fc27a654be25a4d88680540870ca6e2d23ff554481c3174d.png" title=" chris enters 'JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ' into donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="28bca6be1d432d52fc27a654be25a4d88680540870ca6e2d23ff554481c3174d.png" title=" Chris result form three cycle four (completed)" width="1918"/>
+                <img src="28bca6be1d432d52fc27a654be25a4d88680540870ca6e2d23ff554481c3174d.png" title=" Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el cuarto ciclo
+| letrasCuartoCiclo |
+| JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ | (completed)" width="1918"/>
+                <img src="ebf71ce6cc18896bfca8e60aa4df1941b9156fff388ae183a2441fec88199134.png" title=" Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el cuarto ciclo
+| figurasCuartoCiclo |
+| &lt;19&gt; |" width="1918"/>
+                <img src="ebf71ce6cc18896bfca8e60aa4df1941b9156fff388ae183a2441fec88199134.png" title=" Chris result form four cycle four" width="1918"/>
+                <img src="ebf71ce6cc18896bfca8e60aa4df1941b9156fff388ae183a2441fec88199134.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="a906e41bcd7a71414b8145db5661f52c29b7c4af3f93b62808c586f746066e94.png" title=" chris enters '&lt;19&gt;' into donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="a8c733f22fddf739d28452a67a1000e1b6673b6a81a53c42c5a633335bc26a86.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="a8c733f22fddf739d28452a67a1000e1b6673b6a81a53c42c5a633335bc26a86.png" title=" Chris result form four cycle four (completed)" width="1918"/>
+                <img src="a8c733f22fddf739d28452a67a1000e1b6673b6a81a53c42c5a633335bc26a86.png" title=" Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el cuarto ciclo
+| figurasCuartoCiclo |
+| &lt;19&gt; | (completed)" width="1918"/>
+                <img src="3f6621d820dd353d35840530236e487e1cb1650a6eeab1cf280c8060cb13f8e8.png" title=" Cuando el se dirige al primer formulario selecciona el numero correspondiente en el quinto ciclo" width="1918"/>
+                <img src="3f6621d820dd353d35840530236e487e1cb1650a6eeab1cf280c8060cb13f8e8.png" title=" Chris result form one cycle five" width="1918"/>
+                <img src="3f6621d820dd353d35840530236e487e1cb1650a6eeab1cf280c8060cb13f8e8.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="e89a7ed056e2a5a7a899eb68da6ac7efd170092529976eef5e1b2ebcbdc56753.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="e89a7ed056e2a5a7a899eb68da6ac7efd170092529976eef5e1b2ebcbdc56753.png" title=" Chris result form one cycle five (completed)" width="1918"/>
+                <img src="e89a7ed056e2a5a7a899eb68da6ac7efd170092529976eef5e1b2ebcbdc56753.png" title=" Cuando el se dirige al primer formulario selecciona el numero correspondiente en el quinto ciclo (completed)" width="1918"/>
+                <img src="588b3d16e9faf497c3ee8769f13fbbf9b03f27acc8f50fb03d1b4a97b2334314.png" title=" Cuando el se dirige al segundo formulario selecciona el numero correcto en el quinto ciclo" width="1918"/>
+                <img src="588b3d16e9faf497c3ee8769f13fbbf9b03f27acc8f50fb03d1b4a97b2334314.png" title=" Chris result form two cycle five" width="1918"/>
+                <img src="588b3d16e9faf497c3ee8769f13fbbf9b03f27acc8f50fb03d1b4a97b2334314.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="588b3d16e9faf497c3ee8769f13fbbf9b03f27acc8f50fb03d1b4a97b2334314.png" title=" Chris result form two cycle five (completed)" width="1918"/>
+                <img src="588b3d16e9faf497c3ee8769f13fbbf9b03f27acc8f50fb03d1b4a97b2334314.png" title=" Cuando el se dirige al segundo formulario selecciona el numero correcto en el quinto ciclo (completed)" width="1918"/>
+                <img src="292da8df4f8c8c8ee5c7d419152e6709d7c39e15c01218a391f34155f25c99ca.png" title=" Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el quinto ciclo
+| letrasQuintoCiclo |
+| iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii |" width="1918"/>
+                <img src="292da8df4f8c8c8ee5c7d419152e6709d7c39e15c01218a391f34155f25c99ca.png" title=" Chris result form three cycle five" width="1918"/>
+                <img src="292da8df4f8c8c8ee5c7d419152e6709d7c39e15c01218a391f34155f25c99ca.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="cf917ce3acae5a63deb029308da9e528d24cc95ecff64d6c42683e108274fac2.png" title=" chris enters 'iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii' into donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="cf917ce3acae5a63deb029308da9e528d24cc95ecff64d6c42683e108274fac2.png" title=" Chris result form three cycle five (completed)" width="1918"/>
+                <img src="cf917ce3acae5a63deb029308da9e528d24cc95ecff64d6c42683e108274fac2.png" title=" Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el quinto ciclo
+| letrasQuintoCiclo |
+| iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii | (completed)" width="1918"/>
+                <img src="5eb97eff20e1900518224a80f09bf0b50b61f331e0ad3bf5e0732fdfc6a30428.png" title=" Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el quinto ciclo
+| figurasQuintoCiclo |
+| &lt;10&gt; |" width="1918"/>
+                <img src="5eb97eff20e1900518224a80f09bf0b50b61f331e0ad3bf5e0732fdfc6a30428.png" title=" Chris result form four cycle five" width="1918"/>
+                <img src="5eb97eff20e1900518224a80f09bf0b50b61f331e0ad3bf5e0732fdfc6a30428.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="a09943d5a10ce156e86a9eae98bead6bf7a01f19c774cf230d0eb4ad1c0d6500.png" title=" chris enters '&lt;10&gt;' into donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="53a650f5e9ef71b1adaa2d911d35167ffb47060de1fd054cdcf1a90ea547bb34.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="53a650f5e9ef71b1adaa2d911d35167ffb47060de1fd054cdcf1a90ea547bb34.png" title=" Chris result form four cycle five (completed)" width="1918"/>
+                <img src="53a650f5e9ef71b1adaa2d911d35167ffb47060de1fd054cdcf1a90ea547bb34.png" title=" Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el quinto ciclo
+| figurasQuintoCiclo |
+| &lt;10&gt; | (completed)" width="1918"/>
+                <img src="e9ed7799fa5f3ee3293b9fb99c8b82515931c0deb52b1b4e43175b3e3f5f927b.png" title=" Cuando el se dirige al primer formulario selecciona el numero correspondiente en el sexto ciclo" width="1918"/>
+                <img src="e9ed7799fa5f3ee3293b9fb99c8b82515931c0deb52b1b4e43175b3e3f5f927b.png" title=" Chris result form one cycle six" width="1918"/>
+                <img src="e9ed7799fa5f3ee3293b9fb99c8b82515931c0deb52b1b4e43175b3e3f5f927b.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="ac20eda44d44b3f8944fd862c3a337253f4399ba72cb9cf2655579e404793bf0.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="ac20eda44d44b3f8944fd862c3a337253f4399ba72cb9cf2655579e404793bf0.png" title=" Chris result form one cycle six (completed)" width="1918"/>
+                <img src="ac20eda44d44b3f8944fd862c3a337253f4399ba72cb9cf2655579e404793bf0.png" title=" Cuando el se dirige al primer formulario selecciona el numero correspondiente en el sexto ciclo (completed)" width="1918"/>
+                <img src="735e06f3df2a1f6a702b910a020fee3686cc1b4bb6dce6f07676f707fedf08b2.png" title=" Cuando el se dirige al segundo formulario selecciona el numero correcto en el sexto ciclo" width="1918"/>
+                <img src="735e06f3df2a1f6a702b910a020fee3686cc1b4bb6dce6f07676f707fedf08b2.png" title=" Chris result form two cycle six" width="1918"/>
+                <img src="735e06f3df2a1f6a702b910a020fee3686cc1b4bb6dce6f07676f707fedf08b2.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="735e06f3df2a1f6a702b910a020fee3686cc1b4bb6dce6f07676f707fedf08b2.png" title=" Chris result form two cycle six (completed)" width="1918"/>
+                <img src="735e06f3df2a1f6a702b910a020fee3686cc1b4bb6dce6f07676f707fedf08b2.png" title=" Cuando el se dirige al segundo formulario selecciona el numero correcto en el sexto ciclo (completed)" width="1918"/>
+                <img src="f8e143c4f79ba30cb6d621fe78a93f79ccce3a2aded5efbcd384d3eae202efb9.png" title=" Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el sexto ciclo
+| letrasSextoCiclo |
+| DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD |" width="1918"/>
+                <img src="f8e143c4f79ba30cb6d621fe78a93f79ccce3a2aded5efbcd384d3eae202efb9.png" title=" Chris result form three cycle six" width="1918"/>
+                <img src="f8e143c4f79ba30cb6d621fe78a93f79ccce3a2aded5efbcd384d3eae202efb9.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="8898202517a336e9fdfc6afaa9d45215d4c44f84ffd29f53e1975a8e10c21bdd.png" title=" chris enters 'DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD' into donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="8898202517a336e9fdfc6afaa9d45215d4c44f84ffd29f53e1975a8e10c21bdd.png" title=" Chris result form three cycle six (completed)" width="1918"/>
+                <img src="8898202517a336e9fdfc6afaa9d45215d4c44f84ffd29f53e1975a8e10c21bdd.png" title=" Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el sexto ciclo
+| letrasSextoCiclo |
+| DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD | (completed)" width="1918"/>
+                <img src="53381777f80686381b7c74e5375d0f8cc2ce76d0c0a691142a4c603f27a385e7.png" title=" Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el sexto ciclo
+| figurasSextoCiclo |
+| &lt;8&gt; |" width="1918"/>
+                <img src="53381777f80686381b7c74e5375d0f8cc2ce76d0c0a691142a4c603f27a385e7.png" title=" Chris result form four cycle six" width="1918"/>
+                <img src="53381777f80686381b7c74e5375d0f8cc2ce76d0c0a691142a4c603f27a385e7.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="dc100225b55fc340c3885bbe8e0697a12e2ed9b03a1d3c29319b25a828670f79.png" title=" chris enters '&lt;8&gt;' into donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="2236bdda2b246c940428224d8269e7706e44d20fb8da936cd05321c403481f04.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="2236bdda2b246c940428224d8269e7706e44d20fb8da936cd05321c403481f04.png" title=" Chris result form four cycle six (completed)" width="1918"/>
+                <img src="2236bdda2b246c940428224d8269e7706e44d20fb8da936cd05321c403481f04.png" title=" Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el sexto ciclo
+| figurasSextoCiclo |
+| &lt;8&gt; | (completed)" width="1918"/>
+                <img src="257426455ffa3cfbebdbb101b29a9918068d745e57887ee0c3f95370f2c9a22f.png" title=" Cuando el se dirige al primer formulario selecciona el numero correspondiente en el septimo ciclo" width="1918"/>
+                <img src="257426455ffa3cfbebdbb101b29a9918068d745e57887ee0c3f95370f2c9a22f.png" title=" Chris result form one cycle seven" width="1918"/>
+                <img src="257426455ffa3cfbebdbb101b29a9918068d745e57887ee0c3f95370f2c9a22f.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="bcf3b638f8185f9b15229c8cdcca4ae6858cf54c5b84ad673ff6ce85be044d5c.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="bcf3b638f8185f9b15229c8cdcca4ae6858cf54c5b84ad673ff6ce85be044d5c.png" title=" Chris result form one cycle seven (completed)" width="1918"/>
+                <img src="bcf3b638f8185f9b15229c8cdcca4ae6858cf54c5b84ad673ff6ce85be044d5c.png" title=" Cuando el se dirige al primer formulario selecciona el numero correspondiente en el septimo ciclo (completed)" width="1918"/>
+                <img src="51e0fffb66642246600fc5bebfccca869ebd89799113c10ba0b2e649c9f58c6a.png" title=" Cuando el se dirige al segundo formulario selecciona el numero correcto en el septimo ciclo" width="1918"/>
+                <img src="51e0fffb66642246600fc5bebfccca869ebd89799113c10ba0b2e649c9f58c6a.png" title=" Chris result form two cycle seven" width="1918"/>
+                <img src="51e0fffb66642246600fc5bebfccca869ebd89799113c10ba0b2e649c9f58c6a.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="51e0fffb66642246600fc5bebfccca869ebd89799113c10ba0b2e649c9f58c6a.png" title=" Chris result form two cycle seven (completed)" width="1918"/>
+                <img src="51e0fffb66642246600fc5bebfccca869ebd89799113c10ba0b2e649c9f58c6a.png" title=" Cuando el se dirige al segundo formulario selecciona el numero correcto en el septimo ciclo (completed)" width="1918"/>
+                <img src="0fff837a80a5481fb7afac745efcb93c5809acc65179a76f0621a4cbec803006.png" title=" Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el septimo ciclo
+| letrasSeptimoCiclo |
+| MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM |" width="1918"/>
+                <img src="0fff837a80a5481fb7afac745efcb93c5809acc65179a76f0621a4cbec803006.png" title=" Chris result form three cycle seven" width="1918"/>
+                <img src="0fff837a80a5481fb7afac745efcb93c5809acc65179a76f0621a4cbec803006.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="b0ffad19ea68af838767e9c5967ec122c22052d332f87a7035398dfe1285247d.png" title=" chris enters 'MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM' into donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="b0ffad19ea68af838767e9c5967ec122c22052d332f87a7035398dfe1285247d.png" title=" Chris result form three cycle seven (completed)" width="1918"/>
+                <img src="b0ffad19ea68af838767e9c5967ec122c22052d332f87a7035398dfe1285247d.png" title=" Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el septimo ciclo
+| letrasSeptimoCiclo |
+| MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM | (completed)" width="1918"/>
+                <img src="d45c38a8715fdc12306072c8a5bfa9c0f89f428e88785b3662fede289232d825.png" title=" Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el septimo ciclo
+| figurasSeptimoCiclo |
+| &lt;19&gt; |" width="1918"/>
+                <img src="d45c38a8715fdc12306072c8a5bfa9c0f89f428e88785b3662fede289232d825.png" title=" Chris result form four cycle seven" width="1918"/>
+                <img src="d45c38a8715fdc12306072c8a5bfa9c0f89f428e88785b3662fede289232d825.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="4a2df967d9755d29595535a7f540faaf1864c1e546b45b2089e759dc47b2a04b.png" title=" chris enters '&lt;19&gt;' into donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="0681d6b969968e4af6f7b719adc3bc1dcecdf977f1e0d0d6cad35211effe2d1b.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="0681d6b969968e4af6f7b719adc3bc1dcecdf977f1e0d0d6cad35211effe2d1b.png" title=" Chris result form four cycle seven (completed)" width="1918"/>
+                <img src="0681d6b969968e4af6f7b719adc3bc1dcecdf977f1e0d0d6cad35211effe2d1b.png" title=" Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el septimo ciclo
+| figurasSeptimoCiclo |
+| &lt;19&gt; | (completed)" width="1918"/>
+                <img src="8bbea0fca32f0358806aa9a889d82f85639e4cb63f3148c6363937d9ef7b325d.png" title=" Cuando el se dirige al primer formulario selecciona el numero correspondiente en el octavo ciclo" width="1918"/>
+                <img src="8bbea0fca32f0358806aa9a889d82f85639e4cb63f3148c6363937d9ef7b325d.png" title=" Chris result form one cycle eigth" width="1918"/>
+                <img src="8bbea0fca32f0358806aa9a889d82f85639e4cb63f3148c6363937d9ef7b325d.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="9243ccd849eac76dba5e23eddc751e1c5319cfb5c5327d0fb0e34eecd8714041.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="9243ccd849eac76dba5e23eddc751e1c5319cfb5c5327d0fb0e34eecd8714041.png" title=" Chris result form one cycle eigth (completed)" width="1918"/>
+                <img src="9243ccd849eac76dba5e23eddc751e1c5319cfb5c5327d0fb0e34eecd8714041.png" title=" Cuando el se dirige al primer formulario selecciona el numero correspondiente en el octavo ciclo (completed)" width="1918"/>
+                <img src="23880ae259f35dee60ebb20bf35c803407d180f95f2c2a376880107a8cbae6cb.png" title=" Cuando el se dirige al segundo formulario selecciona el numero correcto en el octavo ciclo" width="1918"/>
+                <img src="23880ae259f35dee60ebb20bf35c803407d180f95f2c2a376880107a8cbae6cb.png" title=" Chris result form two cycle eigth" width="1918"/>
+                <img src="23880ae259f35dee60ebb20bf35c803407d180f95f2c2a376880107a8cbae6cb.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="23880ae259f35dee60ebb20bf35c803407d180f95f2c2a376880107a8cbae6cb.png" title=" Chris result form two cycle eigth (completed)" width="1918"/>
+                <img src="23880ae259f35dee60ebb20bf35c803407d180f95f2c2a376880107a8cbae6cb.png" title=" Cuando el se dirige al segundo formulario selecciona el numero correcto en el octavo ciclo (completed)" width="1918"/>
+                <img src="208f5a0f3ecc42cbc54b8cf3fb40a1ba4b70c7f3cee5a0a7daf785082d6c66a8.png" title=" Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el octavo ciclo
+| letrasOctavoCiclo |
+| aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa |" width="1918"/>
+                <img src="208f5a0f3ecc42cbc54b8cf3fb40a1ba4b70c7f3cee5a0a7daf785082d6c66a8.png" title=" Chris result form three cycle eigth" width="1918"/>
+                <img src="208f5a0f3ecc42cbc54b8cf3fb40a1ba4b70c7f3cee5a0a7daf785082d6c66a8.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="ea2834ca8dbde20add6275881d88c7f5cef99b993a9963bdca7c3564b539824b.png" title=" chris enters 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' into donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="ea2834ca8dbde20add6275881d88c7f5cef99b993a9963bdca7c3564b539824b.png" title=" Chris result form three cycle eigth (completed)" width="1918"/>
+                <img src="ea2834ca8dbde20add6275881d88c7f5cef99b993a9963bdca7c3564b539824b.png" title=" Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el octavo ciclo
+| letrasOctavoCiclo |
+| aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa | (completed)" width="1918"/>
+                <img src="f81b916f0e5166c624a8a5f906135da8a297becf89d4003ea28301e3463b0dfb.png" title=" Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el octavo ciclo
+| figurasOctavoCiclo |
+| &lt;14&gt; |" width="1918"/>
+                <img src="f81b916f0e5166c624a8a5f906135da8a297becf89d4003ea28301e3463b0dfb.png" title=" Chris result form four cycle eigth" width="1918"/>
+                <img src="f81b916f0e5166c624a8a5f906135da8a297becf89d4003ea28301e3463b0dfb.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="5cd84ba7796b9e10f14c6ab53456b7e072ed5e0288c343c5e80b1a752c4a694e.png" title=" chris enters '&lt;14&gt;' into donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="2f85a422fce37a16ed6c185de690e2926c0d8945b92f602c6cc49703f9eb189d.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="2f85a422fce37a16ed6c185de690e2926c0d8945b92f602c6cc49703f9eb189d.png" title=" Chris result form four cycle eigth (completed)" width="1918"/>
+                <img src="2f85a422fce37a16ed6c185de690e2926c0d8945b92f602c6cc49703f9eb189d.png" title=" Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el octavo ciclo
+| figurasOctavoCiclo |
+| &lt;14&gt; | (completed)" width="1918"/>
+                <img src="abb7102e7a87fd3c1cb24d8d79edb9dae431dd71a475d0cd4a241438b0dc32f4.png" title=" Cuando el se dirige al primer formulario selecciona el numero correspondiente en el noveno ciclo" width="1918"/>
+                <img src="abb7102e7a87fd3c1cb24d8d79edb9dae431dd71a475d0cd4a241438b0dc32f4.png" title=" Chris result form one cycle nine" width="1918"/>
+                <img src="abb7102e7a87fd3c1cb24d8d79edb9dae431dd71a475d0cd4a241438b0dc32f4.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="905de4956693f14ba040757058883a71cabe16d740ace40ba7949dd27e823046.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="905de4956693f14ba040757058883a71cabe16d740ace40ba7949dd27e823046.png" title=" Chris result form one cycle nine (completed)" width="1918"/>
+                <img src="905de4956693f14ba040757058883a71cabe16d740ace40ba7949dd27e823046.png" title=" Cuando el se dirige al primer formulario selecciona el numero correspondiente en el noveno ciclo (completed)" width="1918"/>
+                <img src="16b504770f5b0aff1d9afee0ab38d7f2245f9a42c239d8d95a4e0a7727729ecd.png" title=" Cuando el se dirige al segundo formulario selecciona el numero correcto en el noveno ciclo" width="1918"/>
+                <img src="16b504770f5b0aff1d9afee0ab38d7f2245f9a42c239d8d95a4e0a7727729ecd.png" title=" Chris result form two cycle nine" width="1918"/>
+                <img src="16b504770f5b0aff1d9afee0ab38d7f2245f9a42c239d8d95a4e0a7727729ecd.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="16b504770f5b0aff1d9afee0ab38d7f2245f9a42c239d8d95a4e0a7727729ecd.png" title=" Chris result form two cycle nine (completed)" width="1918"/>
+                <img src="16b504770f5b0aff1d9afee0ab38d7f2245f9a42c239d8d95a4e0a7727729ecd.png" title=" Cuando el se dirige al segundo formulario selecciona el numero correcto en el noveno ciclo (completed)" width="1918"/>
+                <img src="ea9911568ba05bc0b41278583b132e54cc8c15a80de22f3d208f74ad8977f06f.png" title=" Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el noveno ciclo
+| letrasNovenoCiclo |
+| mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm |" width="1918"/>
+                <img src="ea9911568ba05bc0b41278583b132e54cc8c15a80de22f3d208f74ad8977f06f.png" title=" Chris result form three cycle nine" width="1918"/>
+                <img src="ea9911568ba05bc0b41278583b132e54cc8c15a80de22f3d208f74ad8977f06f.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="3f30ef7ed00c7554a06b7356bfdcedef893435e4a03f21659943f27905e0c41c.png" title=" chris enters 'mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm' into donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="3f30ef7ed00c7554a06b7356bfdcedef893435e4a03f21659943f27905e0c41c.png" title=" Chris result form three cycle nine (completed)" width="1918"/>
+                <img src="3f30ef7ed00c7554a06b7356bfdcedef893435e4a03f21659943f27905e0c41c.png" title=" Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el noveno ciclo
+| letrasNovenoCiclo |
+| mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm | (completed)" width="1918"/>
+                <img src="c95f4cd29f0113b09a7e3f0d5fb723343f3bc161046e2d95e92c7396c6e071ce.png" title=" Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el noveno ciclo
+| figurasNovenoCiclo |
+| &lt;9&gt; |" width="1918"/>
+                <img src="c95f4cd29f0113b09a7e3f0d5fb723343f3bc161046e2d95e92c7396c6e071ce.png" title=" Chris result form four cycle nine" width="1918"/>
+                <img src="c95f4cd29f0113b09a7e3f0d5fb723343f3bc161046e2d95e92c7396c6e071ce.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="dc9b1cabe4628e6b324e43fee608700e340cf20ce521e3643609a60c7834bc3b.png" title=" chris enters '&lt;9&gt;' into donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="e10043efb32604981be14a9cc50aa1688459e6c96cdab7b0464d68a1621728e8.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="e10043efb32604981be14a9cc50aa1688459e6c96cdab7b0464d68a1621728e8.png" title=" Chris result form four cycle nine (completed)" width="1918"/>
+                <img src="e10043efb32604981be14a9cc50aa1688459e6c96cdab7b0464d68a1621728e8.png" title=" Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el noveno ciclo
+| figurasNovenoCiclo |
+| &lt;9&gt; | (completed)" width="1918"/>
+                <img src="21978b9b1d59f1a276b084419c04fcb00d15162e7b6ca59055d9671298444964.png" title=" Cuando el se dirige al primer formulario selecciona el numero correspondiente en el decimo ciclo" width="1918"/>
+                <img src="21978b9b1d59f1a276b084419c04fcb00d15162e7b6ca59055d9671298444964.png" title=" Chris result form one cycle ten" width="1918"/>
+                <img src="21978b9b1d59f1a276b084419c04fcb00d15162e7b6ca59055d9671298444964.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="836f80f53f8e29543b6eedb03b4baf97a48e69328b77be4122f0469cd5acc1b8.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="836f80f53f8e29543b6eedb03b4baf97a48e69328b77be4122f0469cd5acc1b8.png" title=" Chris result form one cycle ten (completed)" width="1918"/>
+                <img src="836f80f53f8e29543b6eedb03b4baf97a48e69328b77be4122f0469cd5acc1b8.png" title=" Cuando el se dirige al primer formulario selecciona el numero correspondiente en el decimo ciclo (completed)" width="1918"/>
+                <img src="9bba3a463924389b0c413f842ced6886c343d309153926c0d9065de3b0e53821.png" title=" Cuando el se dirige al segundo formulario selecciona el numero correcto en el decimo ciclo" width="1918"/>
+                <img src="9bba3a463924389b0c413f842ced6886c343d309153926c0d9065de3b0e53821.png" title=" Chris result form two cycle ten" width="1918"/>
+                <img src="9bba3a463924389b0c413f842ced6886c343d309153926c0d9065de3b0e53821.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="9bba3a463924389b0c413f842ced6886c343d309153926c0d9065de3b0e53821.png" title=" Chris result form two cycle ten (completed)" width="1918"/>
+                <img src="9bba3a463924389b0c413f842ced6886c343d309153926c0d9065de3b0e53821.png" title=" Cuando el se dirige al segundo formulario selecciona el numero correcto en el decimo ciclo (completed)" width="1918"/>
+                <img src="b5958f9e9591a0841a1ccfaed302c48f8e7390ffa396947274bec81b550b1619.png" title=" Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el decimo ciclo
+| letrasDecimoCiclo |
+| MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM |" width="1918"/>
+                <img src="b5958f9e9591a0841a1ccfaed302c48f8e7390ffa396947274bec81b550b1619.png" title=" Chris result form three cycle ten" width="1918"/>
+                <img src="b5958f9e9591a0841a1ccfaed302c48f8e7390ffa396947274bec81b550b1619.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="736fe8083a759e765cb72946bcacb023a0c895b5abc847e593f599c17ffeed3b.png" title=" chris enters 'MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM' into donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="736fe8083a759e765cb72946bcacb023a0c895b5abc847e593f599c17ffeed3b.png" title=" Chris result form three cycle ten (completed)" width="1918"/>
+                <img src="736fe8083a759e765cb72946bcacb023a0c895b5abc847e593f599c17ffeed3b.png" title=" Cuando el se dirige al tercer formulario escribe la cantidad de letras correctas en el decimo ciclo
+| letrasDecimoCiclo |
+| MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM | (completed)" width="1918"/>
+                <img src="797a6253242b832f0af4421e8bba387967b5372081b3017df2fbf25365818fe2.png" title=" Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el decimo ciclo
+| figurasDecimoCiclo |
+| &lt;8&gt; |" width="1918"/>
+                <img src="797a6253242b832f0af4421e8bba387967b5372081b3017df2fbf25365818fe2.png" title=" Chris result form four cycle ten" width="1918"/>
+                <img src="797a6253242b832f0af4421e8bba387967b5372081b3017df2fbf25365818fe2.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="7c2a1297b4a62dda069db0ab3e23535c908b535e18764df10de9f9536a5af602.png" title=" chris enters '&lt;8&gt;' into donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="070a432edf3fd481f628b988e1607e063264e6d6fc4fe304756395f435ab26b1.png" title=" chris clicks on donde se ingresa la respuesta del primer formulario" width="1918"/>
+                <img src="070a432edf3fd481f628b988e1607e063264e6d6fc4fe304756395f435ab26b1.png" title=" Chris result form four cycle ten (completed)" width="1918"/>
+                <img src="070a432edf3fd481f628b988e1607e063264e6d6fc4fe304756395f435ab26b1.png" title=" Cuando el se dirige al cuarto formulario escribe el numero de figuras correcto en  el decimo ciclo
+| figurasDecimoCiclo |
+| &lt;8&gt; | (completed): <span class='pending-color'>PENDING</span>" width="1918"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.1.0</span>
+</div>
+</body>
+</html>
